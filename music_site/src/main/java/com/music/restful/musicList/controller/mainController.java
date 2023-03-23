@@ -12,12 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/musicMain")
 public class mainController {
 	
-	public ResponseEntity<?> showUser(){
-//		User user = 
 		
-		return null;
-		
-	}
 	
 
 }

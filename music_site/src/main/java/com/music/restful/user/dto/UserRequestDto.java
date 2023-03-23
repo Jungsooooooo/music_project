@@ -1,5 +1,7 @@
 package com.music.restful.user.dto;
 
+import com.music.restful.user.entity.UserInfo;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,4 +15,14 @@ public class UserRequestDto {
 	private String address;
 	private String password;
 	private String phone;
+	
+	public UserInfo toEntity() {
+		UserInfo userInfo = new UserInfo();
+		userInfo.setId(id);
+		userInfo.setAddress(address);
+		userInfo.setPassword(password);
+		userInfo.setPhone(phone);
+		
+		return userInfo;
+	}
 }
