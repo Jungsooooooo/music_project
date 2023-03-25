@@ -14,6 +14,9 @@ import com.music.restful.user.dto.UserResponseDto;
 import com.music.restful.user.entity.UserInfo;
 import com.music.restful.user.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping("/api/user")
 public class UserController {

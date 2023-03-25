@@ -2,7 +2,10 @@ package com.music.restful.user.entity;
 
 import java.util.UUID;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
@@ -10,7 +13,6 @@ import lombok.Getter;
 @Getter
 public class UserInfo  {
 
-	@Id
 	private String id;
 	
 	private String password;
@@ -19,6 +21,8 @@ public class UserInfo  {
 	
 	private String phone;
 	
+	 @Id @GeneratedValue(generator = "uuid2")
+	 @GenericGenerator(name="uuid2", strategy = "uuid2")
 	private UUID uid;
 
 	public String getId() {

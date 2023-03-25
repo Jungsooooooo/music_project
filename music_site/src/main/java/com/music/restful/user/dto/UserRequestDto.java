@@ -12,10 +12,26 @@ import lombok.Getter;
 public class UserRequestDto {
 	
 	private String id;
-	private String address;
 	private String password;
+	private String address;
 	private String phone;
 	
+	public String getId() {
+		return id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
 	public UserInfo toEntity() {
 		UserInfo userInfo = new UserInfo();
 		userInfo.setId(id);

@@ -1,9 +1,23 @@
 package com.music.restful.user.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.music.restful.user.dto.UserRequestDto;
 import com.music.restful.user.entity.UserInfo;
+import com.music.restful.user.repository.UserRepository;
 
-public interface UserService {
+@Service
+public class UserService {
 	
-	public UserInfo createUser(UserRequestDto userRequestDto);
+	@Autowired
+	private UserRepository userRepository;
+	
+	public UserInfo createUser(UserRequestDto userRequestDto) {
+		
+		UserInfo userInfo = userRequestDto.toEntity();
+		
+		userInfo = userRepository.save(userInfo);
+		return userInfo;
+	}
 }
