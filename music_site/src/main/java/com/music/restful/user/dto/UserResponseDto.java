@@ -15,5 +15,7 @@ public class UserResponseDto  {
 		this.password = userInfo.getPassword();
 		this.phone = userInfo.getPhone();
 	}
+	
+	
 
 }

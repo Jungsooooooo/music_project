@@ -24,7 +24,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@PostMapping()
+	@PostMapping
 	public ResponseEntity<?> createUser(@RequestBody UserRequestDto userRequestDto){
 		
 		UserInfo userInfo = userService.createUser(userRequestDto);
