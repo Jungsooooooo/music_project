@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +33,12 @@ public class UserController {
 		UserResponseDto userResponseDto = new UserResponseDto(userInfo);
 		
 		return new ResponseEntity<>(userResponseDto,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/check")
+	public ResponseEntity<Boolean> checkUser(@PathVariable String id){
+		
+		return ResponseEntity.ok(userService.existsById(id));
 	}
 	
 }

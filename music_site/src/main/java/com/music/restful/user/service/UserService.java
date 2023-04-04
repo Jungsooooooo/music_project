@@ -20,4 +20,9 @@ public class UserService {
 		userInfo = userRepository.save(userInfo);
 		return userInfo;
 	}
+	
+	public boolean existsById(String id) {
+		return userRepository.existsById(id);
+	}
+	
 }
