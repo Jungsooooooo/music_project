@@ -35,7 +35,7 @@ public class UserController {
 		return new ResponseEntity<>(userResponseDto,HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/check")
+	@GetMapping("/{id}")
 	public ResponseEntity<Boolean> checkUser(@PathVariable String id){
 		
 		return ResponseEntity.ok(userService.existsById(id));
