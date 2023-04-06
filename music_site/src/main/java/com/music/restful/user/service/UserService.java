@@ -7,22 +7,14 @@ import com.music.restful.user.dto.UserRequestDto;
 import com.music.restful.user.entity.UserInfo;
 import com.music.restful.user.repository.UserRepository;
 
-@Service
-public class UserService {
+
+public interface UserService {
+
+	public UserInfo createUser(UserRequestDto userRequestDto);
 	
-	@Autowired
-	private UserRepository userRepository;
+	public boolean existsById(String id); 
 	
-	public UserInfo createUser(UserRequestDto userRequestDto) {
+	
+	public UserInfo loginUser(UserRequestDto userRequestDto);
 		
-		UserInfo userInfo = userRequestDto.toEntity();
-		
-		userInfo = userRepository.save(userInfo);
-		return userInfo;
-	}
-	
-	public boolean existsById(String id) {
-		return userRepository.existsById(id);
-	}
-	
 }

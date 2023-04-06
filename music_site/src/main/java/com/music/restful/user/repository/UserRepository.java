@@ -11,4 +11,6 @@ import com.music.restful.user.entity.UserInfo;
 public interface UserRepository extends JpaRepository<UserInfo, UUID> {
 	
 	boolean existsById(String id);
+	
+	UserInfo findByIdAndPassword(String id, String password);
 }
