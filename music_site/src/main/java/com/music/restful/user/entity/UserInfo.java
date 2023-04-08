@@ -16,7 +16,6 @@ import lombok.NonNull;
 @Getter
 public class UserInfo  {
 	
-	
 	private String id;
 	
 	private String password;

@@ -15,6 +15,23 @@ public class UserResponseDto  {
 		this.password = userInfo.getPassword();
 		this.phone = userInfo.getPhone();
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+	
 	
 	
 

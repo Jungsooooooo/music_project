@@ -26,7 +26,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping
+	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody UserRequestDto userRequestDto){
 		UserInfo userInfo = userService.loginUser(userRequestDto);
 		UserResponseDto userResponseDto = new UserResponseDto(userInfo);
