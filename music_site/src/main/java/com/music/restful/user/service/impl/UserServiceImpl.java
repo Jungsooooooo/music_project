@@ -1,8 +1,11 @@
 package com.music.restful.user.service.impl;
 
+import java.security.NoSuchAlgorithmException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.music.restful.common.SHA256;
 import com.music.restful.user.dto.UserRequestDto;
 import com.music.restful.user.entity.UserInfo;
 import com.music.restful.user.repository.UserRepository;
@@ -23,6 +26,15 @@ public class UserServiceImpl implements UserService {
 	public UserInfo createUser(UserRequestDto userRequestDto) {
 		
 		UserInfo userInfo = userRequestDto.toEntity();
+		
+		SHA256 sha256 = new SHA256();
+		
+		try {
+			userInfo.setPassword(sha256.encrypt(userRequestDto.getPassword()));
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		userInfo = userRepository.save(userInfo);
 		return userInfo;
