@@ -47,9 +47,17 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserInfo loginUser(UserRequestDto userRequestDto) {
-		// TODO Auto-generated method stub
+		
+		SHA256 sha256 = new SHA256();
+		
 		String id = userRequestDto.getId();
-		String password = userRequestDto.getPassword();
+		String password = null;
+		try {
+			password = sha256.encrypt(userRequestDto.getPassword());
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return userRepository.findByIdAndPassword(id, password );
 	}
 }

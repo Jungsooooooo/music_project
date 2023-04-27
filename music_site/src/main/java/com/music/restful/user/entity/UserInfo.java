@@ -1,5 +1,6 @@
 package com.music.restful.user.entity;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.antlr.v4.runtime.misc.NotNull;
@@ -23,6 +24,10 @@ public class UserInfo  {
 	private String address;
 	
 	private String phone;
+	
+	private String email;
+	
+	private LocalDateTime birth;
 	
 	 @Id @GeneratedValue(generator = "uuid2")
 	 @GenericGenerator(name="uuid2", strategy = "uuid2")
@@ -59,5 +64,27 @@ public class UserInfo  {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDateTime getBirth() {
+		return birth;
+	}
+	
+	public void setBirth(LocalDateTime birth) {
+		this.birth = birth;
+	}
+
+	public UUID getUid() {
+		return uid;
+	}
+	
+	
 	
 }
