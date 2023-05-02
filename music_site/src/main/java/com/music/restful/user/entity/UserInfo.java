@@ -29,6 +29,8 @@ public class UserInfo  {
 	
 	private LocalDateTime birth;
 	
+	private String type;
+	
 	 @Id @GeneratedValue(generator = "uuid2")
 	 @GenericGenerator(name="uuid2", strategy = "uuid2")
 	private UUID uid;
@@ -79,6 +81,14 @@ public class UserInfo  {
 	
 	public void setBirth(LocalDateTime birth) {
 		this.birth = birth;
+	}
+
+	public String getType() {
+		return type;
+	}
+	
+	public void setType(String type) {
+		this.type=type;
 	}
 
 	public UUID getUid() {
