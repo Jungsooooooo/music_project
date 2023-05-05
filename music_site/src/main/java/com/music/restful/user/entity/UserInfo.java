@@ -3,15 +3,13 @@ package com.music.restful.user.entity;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
-import lombok.NonNull;
+
 
 @Entity
 @Getter
