@@ -2,10 +2,12 @@ package com.music.restful.musicList.entity;
 
 import java.util.UUID;
 
+import com.music.restful.user.entity.UserInfo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 
 
@@ -21,6 +23,10 @@ public class MusicInfo {
 	private String info;
 	private Double recommended;
 	private String writer;
+	
+	@OneToOne
+	@JoinColumn(name="r_userInfo_uid")
+	private UserInfo userInfo;
 
 	public UUID getId() {
 		return id;
@@ -65,5 +71,15 @@ public class MusicInfo {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+
+	public UserInfo getUserInfo() {
+		return userInfo;
+	}
+	
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
+	}
+	
+	
 	
 }
