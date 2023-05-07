@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.music.restful.musicList.entity.MusicInfo;
 
 @Repository
-public interface MusicMainRepository extends JpaRepository<MusicInfo, UUID> {
+public interface MusicInfoRepository extends JpaRepository<MusicInfo, UUID> {
 
 }

@@ -1,31 +1,19 @@
-package com.example.demo;
+package com.music.restful.musicList.service.impl;
 
-import java.util.UUID;
-
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import com.music.restful.MusicSiteApplication;
 import com.music.restful.musicList.dto.MusicRecommendRequestDto;
 import com.music.restful.musicList.entity.MusicInfo;
 import com.music.restful.musicList.repository.MusicInfoRepository;
+import com.music.restful.musicList.service.MusicInfoService;
 
-@SpringBootTest(classes = MusicSiteApplication.class)
-class MusicSiteApplicationTests {
-	@Autowired
-	MusicInfoRepository musicMainRepository;
+public class MusicInfoServiceImpl implements MusicInfoService {
 	
 	@Autowired
 	private MusicInfoRepository musicInfoRepository;
-
-	@Test
-	void contextLoads() {
-		
-		
-	}
 	
-	@Test
+
+	@Override
 	public MusicInfo createMusicInfo(MusicRecommendRequestDto musicRecommendRequestDto) {
 		
 		MusicInfo musicInfo = musicRecommendRequestDto.toEntity();
@@ -33,8 +21,6 @@ class MusicSiteApplicationTests {
 		musicInfo = musicInfoRepository.save(musicInfo);
 		
 		return musicInfo;
-		
 	}
-	
 
 }
