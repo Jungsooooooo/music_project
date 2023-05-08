@@ -5,13 +5,20 @@ import java.util.UUID;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.music.restful.musicList.entity.MusicInfo;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 
 
 @Entity
+@Table(name="user_info")
 @Getter
 public class UserInfo  {
 	
@@ -29,8 +36,13 @@ public class UserInfo  {
 	
 	private String type;
 	
-	 @Id @GeneratedValue(generator = "uuid2")
-	 @GenericGenerator(name="uuid2", strategy = "uuid2")
+	@OneToOne(mappedBy = "userInfo", fetch=FetchType.LAZY)
+	private MusicInfo musicInfo;
+	
+	@Id 
+	@GeneratedValue(generator = "uuid2")
+	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "uid", columnDefinition = "uuid", updatable = false, nullable = false)
 	private UUID uid;
 
 	public String getId() {

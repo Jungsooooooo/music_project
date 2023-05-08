@@ -2,21 +2,31 @@ package com.music.restful.musicList.entity;
 
 import java.util.UUID;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.music.restful.user.entity.UserInfo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 
 
-@Entity(name = "music_info")
+@Entity
+@Table(name = "music_info")
 @Getter
 public class MusicInfo {
 	
 	@Id
-	private UUID id;
+	@GeneratedValue(generator = "uuid2")
+	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "uid", columnDefinition = "uuid", updatable = false, nullable = false)
+	private UUID uid;
 	
 	private String name;
 	private String title;
@@ -24,12 +34,12 @@ public class MusicInfo {
 	private Double recommended;
 	private String writer;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="r_userInfo_uid")
 	private UserInfo userInfo;
 
 	public UUID getId() {
-		return id;
+		return uid;
 	}
 
 	public String getName() {
