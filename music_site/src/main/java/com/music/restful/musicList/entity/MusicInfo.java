@@ -31,6 +31,7 @@ public class MusicInfo {
 	private String name;
 	private String title;
 	private String info;
+	private String genre;
 	private Double recommended;
 	private String writer;
 	
@@ -89,7 +90,15 @@ public class MusicInfo {
 	public void setUserInfo(UserInfo userInfo) {
 		this.userInfo = userInfo;
 	}
+
+	public String getGenre() {
+		return genre;
+	}
 	
+	
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 	
 	
 }
