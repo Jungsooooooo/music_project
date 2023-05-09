@@ -1,5 +1,7 @@
 package com.music.restful.user.dto;
 
+import java.util.UUID;
+
 import com.music.restful.user.entity.UserInfo;
 
 public class UserResponseDto  {
@@ -7,6 +9,7 @@ public class UserResponseDto  {
 	private String address;
 	private String password;
 	private String phone;
+	private UUID uid;
 	
 	public UserResponseDto(UserInfo userInfo) {
 		super();
@@ -14,6 +17,7 @@ public class UserResponseDto  {
 		this.address = userInfo.getAddress();
 		this.password = userInfo.getPassword();
 		this.phone = userInfo.getPhone();
+		this.uid = userInfo.getUid();
 	}
 
 	public String getId() {
@@ -30,6 +34,10 @@ public class UserResponseDto  {
 
 	public String getPhone() {
 		return phone;
+	}
+
+	public UUID getUid() {
+		return uid;
 	}
 	
 	

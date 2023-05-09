@@ -1,6 +1,7 @@
 package com.music.restful.user.dto;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import com.music.restful.user.entity.UserInfo;
 
