@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<UserInfo, UUID> {
 	boolean existsById(String id);
 	
 	UserInfo findByIdAndPassword(String id, String password);
+	
+	UserInfo findByUid(UUID uid);
 }

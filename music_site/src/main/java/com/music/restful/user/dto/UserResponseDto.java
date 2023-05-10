@@ -7,7 +7,6 @@ import com.music.restful.user.entity.UserInfo;
 public class UserResponseDto  {
 	private String id;
 	private String address;
-	private String password;
 	private String phone;
 	private UUID uid;
 	
@@ -15,7 +14,6 @@ public class UserResponseDto  {
 		super();
 		this.id = userInfo.getId();
 		this.address = userInfo.getAddress();
-		this.password = userInfo.getPassword();
 		this.phone = userInfo.getPhone();
 		this.uid = userInfo.getUid();
 	}
@@ -26,10 +24,6 @@ public class UserResponseDto  {
 
 	public String getAddress() {
 		return address;
-	}
-
-	public String getPassword() {
-		return password;
 	}
 
 	public String getPhone() {

@@ -1,5 +1,6 @@
 package com.music.restful.musicList.dto;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -17,9 +18,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class MusicRecommendRequestDto {
-	
-	@Autowired
-	private UserRepository userRepository;
 	
 	private String title;
 	private String info;
@@ -81,13 +79,11 @@ public class MusicRecommendRequestDto {
 
 	public MusicInfo toEntity() {
 		MusicInfo musicInfo = new MusicInfo();
-		Optional<UserInfo> userInfo = userRepository.findById(UUID.fromString(userUUID));
 		
 		musicInfo.setTitle(title);
 		musicInfo.setInfo(info);
 		musicInfo.setRecommended(recommended);
 		musicInfo.setGenre(genre);
-		musicInfo.setUserInfo(userInfo.get());
 		
 		return musicInfo;
 	}

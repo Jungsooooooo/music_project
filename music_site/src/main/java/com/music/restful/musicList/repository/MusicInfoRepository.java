@@ -10,4 +10,5 @@ import com.music.restful.musicList.entity.MusicInfo;
 @Repository
 public interface MusicInfoRepository extends JpaRepository<MusicInfo, UUID> {
 
+
 }
