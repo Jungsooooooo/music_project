@@ -1,6 +1,7 @@
 package com.music.restful.user.service.impl;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,5 +60,11 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		}
 		return userRepository.findByIdAndPassword(id, password );
+	}
+	
+	@Override
+	public List<UserInfo> getAllUser() {
+		
+		return userRepository.findAll();
 	}
 }
