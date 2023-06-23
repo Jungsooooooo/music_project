@@ -12,7 +12,7 @@ import com.music.restful.musicList.service.MusicInfoService;
 import com.music.restful.user.entity.UserInfo;
 import com.music.restful.user.repository.UserRepository;
 
-import jakarta.persistence.criteria.From;
+import javax.persistence.criteria.From;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

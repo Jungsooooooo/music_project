@@ -16,7 +16,6 @@ import lombok.Getter;
 
 @Builder
 @Getter
-@AllArgsConstructor
 public class MusicRecommendRequestDto {
 	
 	private String title;
@@ -28,41 +27,20 @@ public class MusicRecommendRequestDto {
 	
 	private UserInfo userInfo;
 	
-	
-	public String getTitle() {
-		return title;
-	}
-	
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	
-	public String getInfo() {
-		return info;
 	}
 	
 	public void setInfo(String info){
 		this.info = info;
 	}
 	
-	public Double getRecommended() {
-		return recommended;
-	}
-	
 	public void setRecommended(Double recommended) {
 		this.recommended = recommended;
 	}
 	
-	public String getGenre() {
-		return genre;
-	}
-	
 	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-	
-	public String getUserUUID() {
-		return userUUID;
 	}
 	
 	public void setUserUUID(String userUid) {
